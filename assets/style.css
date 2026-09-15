@@ -1,3 +1,11 @@
+/* Les attributs width/height sur les <img> reservent l'espace avant
+   le chargement (prevention du CLS). Sans height:auto, le navigateur
+   applique la hauteur de l'attribut en pixels au lieu du ratio. */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 body {
 	max-width: 1920px;
 	margin: auto;
