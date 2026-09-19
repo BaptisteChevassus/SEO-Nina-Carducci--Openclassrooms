@@ -109,7 +109,8 @@ body {
 	justify-content: center;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
+	/* Texte noir : contraste 9,9:1 sur #BEB45A (blanc = 2,1:1, echec WCAG AA) */
+	color: #000;
 	background-color: #BEB45A;
 	border-radius:0 ;
 }
