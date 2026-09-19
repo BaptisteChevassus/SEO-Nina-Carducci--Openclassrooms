@@ -116,7 +116,8 @@
     openLightBox(element, lightboxId) {
       $(`#${lightboxId}`)
         .find(".lightboxImage")
-        .attr("src", element.attr("src"));
+        .attr("src", element.attr("src"))
+        .attr("alt", element.attr("alt"));
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
@@ -156,7 +157,9 @@
       next =
         imagesCollection[index] ||
         imagesCollection[imagesCollection.length - 1];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      $(".lightboxImage")
+        .attr("src", $(next).attr("src"))
+        .attr("alt", $(next).attr("alt"));
     },
     nextImage() {
       let activeImage = null;
@@ -193,7 +196,9 @@
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
-      $(".lightboxImage").attr("src", $(next).attr("src"));
+      $(".lightboxImage")
+        .attr("src", $(next).attr("src"))
+        .attr("alt", $(next).attr("alt"));
     },
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
