@@ -115,6 +115,8 @@ body {
 	border-radius:0 ;
 }
 .nav-pills .nav-link {
+	/* Les filtres sont des <span> : sans cela, pas de curseur de clic */
+	cursor: pointer;
 	color: #000
 }
 .item-column {
@@ -129,6 +131,8 @@ body {
 
 }
 .gallery-item {
+	/* La vignette ouvre la lightbox au clic : le curseur doit l'indiquer */
+	cursor: pointer;
 	position: absolute;
 	width: 100%;
 	height: 100%;
