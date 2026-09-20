@@ -149,6 +149,15 @@ body {
 	font-size: 24px;
 }
 
+/* Fond sombre derriere les fleches du carousel : les rend lisibles sur les
+   photos claires, et donne un fond calculable au texte masque des boutons
+   (sinon WAVE calcule du blanc sur blanc). Opacite ramenee a 1 : Bootstrap
+   applique .5 par defaut, ce qui eclaircit le fond et casse le contraste. */
+.carousel-control-prev, .carousel-control-next {
+	background-color: rgba(0, 0, 0, .55);
+	opacity: 1;
+}
+
 .quote {
 	font-family: 'Spectral';
 	font-style: italic;
