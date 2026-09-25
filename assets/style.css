@@ -149,13 +149,23 @@ body {
 	font-size: 24px;
 }
 
-/* Fond sombre derriere les fleches du carousel : les rend lisibles sur les
-   photos claires, et donne un fond calculable au texte masque des boutons
-   (sinon WAVE calcule du blanc sur blanc). Opacite ramenee a 1 : Bootstrap
-   applique .5 par defaut, ce qui eclaircit le fond et casse le contraste. */
+/* Les controles du carousel sont des bandes de 15% de large : poser le fond
+   sur le bouton assombrit deux colonnes entieres de la photo. Le fond est donc
+   porte par l'icone seule, en pastille ronde.
+   Opacite ramenee a 1 : Bootstrap applique .5 par defaut, ce qui eclaircit la
+   pastille et casse le contraste. */
 .carousel-control-prev, .carousel-control-next {
-	background-color: rgba(0, 0, 0, .55);
+	/* Ne concerne que le libelle .visually-hidden : la fleche est une image SVG
+	   blanche, independante de color. Sans cela WAVE calcule du blanc sur blanc. */
+	color: #000;
 	opacity: 1;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, .55);
+	background-size: 45% 45%;
 }
 
 .quote {
@@ -373,6 +383,12 @@ input[type="submit"] {
 	}
 	.picture {
 		width: 80%;
+	}
+	.carousel-control-prev-icon, .carousel-control-next-icon {
+		/* La bande ne fait que 15% de la largeur : pastille reduite pour qu'elle
+		   garde une marge sur les petits ecrans. */
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 }
 
